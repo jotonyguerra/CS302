@@ -1,0 +1,59 @@
+CS302 10/23/19
+Hashing AVL Tree
+
+Hashing
+-search structure
+-key and item
+-hash function that maps the key to an element of table;
+-
+
+
+hash function h(x)
+
+good
+h(key1) => index1
+h(key2) => index2 
+
+collision:
+h(key1) => index1
+h(key2) => index2 
+
+-we want the hash functio to produce few collision
+-minimal clustering 
+
+Load factor
+alpha = n/m  (n=amount of items stored in the hash table)
+             (m= size of the hash table)
+
+sacrifice memory for speed;
+chaining: a mechanism for handling collision. 
+myHash<int, int> h;
+first int = key type 
+second int = item type
+
+hash(x) => x % size(10)
+
+h[15] =39;
+hash(15) => 5 //so 39 is stored into the 5th index
+
+index[5] = key:15 item:39
+h[41] = 16;
+hash(41) => 1 // index 1;
+insert into index 1: key 41 item 16;
+ 
+
+ RunTIME: 
+ Exprected Runtime = O(1 + alpha) alpha = n/m;
+ Worst case Scenario: O(n) 
+ 
+ relatively constant run time; 
+
+ load factor of 0.5 is bad. n must be much larger than m.
+
+ Resize the hash table:
+
+ ways of handling collision:
+ -linear probing
+ -quadratic probing 
+ -double hashing
+ -cuckoo hashing
